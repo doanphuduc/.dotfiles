@@ -1,0 +1,77 @@
+#!/bin/bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+export DOTFILES=$(pwd -P)
+TARGET=$HOME
+
+DOTFILES_DIRS=$(ls -d $DOTFILES/*/ | awk -F "/" '{ print $(NF-1) }')
+
+for F in $DOTFILES_DIRS ; do
+  if [[ $F = "nvim" ]]; then
+    echo "~ Installing :: $F"
+    stow --dotfiles --dir $DOTFILES --target $TARGET $F
+  fi
+
+  if [[ $F = "tmux" ]]; then
+    echo "~ Installing :: $F"
+    stow --dotfiles --dir $DOTFILES --target $TARGET $F
+  fi
+
+  if [[ $F = "zsh" ]]; then
+    echo "~ Installing :: $F"
+    stow --dotfiles --dir $DOTFILES --target $TARGET $F
+  fi
+
+  # # Remove previous links
+  # # NOTE: `stow` issues warning when working with absolute paths, so for now I am ignoring it
+  # # GHI: https://github.com/aspiers/stow/issues/65
+  # stow -D --dotfiles --dir $DOTFILES --target $TARGET $F 2>/dev/null
+
+  # # Installed new links
+done
+
+###############################
+## Setup required for neovim ##
+###############################
+
+echo "> Setting up neovim"
+
+echo "~ Installing :: neovim"
+
+NEOVIM=$HOME/.local/
+
+wget -P $NEOVIM/ https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.tar.gz
+tar -xzvf $NEOVIM/nvim-linux64.tar.gz -C $NEOVIM
+cp -r $NEOVIM/nvim-linux64/* $NEOVIM/.
+rm -rf $NEOVIM/nvim-linux64*
+
+echo "+ Done"
+
+PACKER=$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+if [ ! -d $PACKER ]; then
+    echo "~ Installing :: packer.nvim"
+
+    git clone https://github.com/wbthomason/packer.nvim $PACKER
+
+    echo "+ Done"
+else
+    echo "~ Already Installed :: packer.nvim"
+fi
+
+###############################
+## Setup fzf ##
+###############################
+
+echo "> Setting up fzf"
+
+echo "~ Installing :: fzf"
+FZF=~/.fzf
+
+git clone --depth 1 https://github.com/junegunn/fzf.git $FZF
+$FZF/install --all
+
+echo "+ Done"
