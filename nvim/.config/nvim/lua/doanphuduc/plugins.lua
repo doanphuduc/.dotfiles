@@ -78,7 +78,12 @@ return require('packer').startup(function()
   use("terryma/vim-multiple-cursors")
 
   -- LSP & Completion
-  use("neovim/nvim-lspconfig")
+  use({
+    "neovim/nvim-lspconfig",
+    config = function()
+      require('doanphuduc.plugins.nvim-lspconfig')
+    end
+  })
   use("hrsh7th/nvim-cmp")
   use({
     "hrsh7th/cmp-nvim-lsp",
