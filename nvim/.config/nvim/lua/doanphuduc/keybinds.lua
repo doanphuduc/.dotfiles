@@ -53,7 +53,7 @@ nnoremap('Y', 'y$')
 nnoremap('<Leader>p', '"_dP')
 
 -- Remove highlight with two Escape
-nnoremap('<Esc><Esc>', ':<C-u>nohlsearch<CR>')
+nnoremap('<Esc><Esc>', ':<C-u>nohlsearch<CR>', { silent = false } )
 
 -- Use tab to indent block
 vmap('<Tab>', '>gv')
