@@ -10,9 +10,11 @@ local on_attach = function(client, bufnr)
   -- Mappings
   local opts = { noremap = true, silent = true }
 
-  buf_set_keymap('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', 'K', ':lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gr', ':lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '<Leader>rn', ':lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<Leader>ws', ':lua vim.lsp.buf.workspace_symbol()<CR>', opts)
 end
 
 local base_config = function(_config)

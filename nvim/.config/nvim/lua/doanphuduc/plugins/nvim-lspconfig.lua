@@ -5,3 +5,4 @@ local clangd = require('doanphuduc.plugins.nvim-lspconfig.clangd')
 clangd.serve(config)
 
 -- Python LSP
+vim.g.lsp_preview_autoclose = true
