@@ -1,10 +1,9 @@
-local luasnip = require("luasnip")
 local cmp = require("cmp")
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)
+      require('luasnip').lsp_expand(args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -18,15 +17,15 @@ cmp.setup({
   }),
   sources = {
     { name = 'nvim_lsp', max_item_count = 10 },
-    { name = 'luasnip', max_item_count = 10},
+    { name = 'luasnip', max_item_count = 10 },
   },
-	-- formatting = {
-	-- 	format = lspkind.cmp_format({
-        -- with_text = false,
-        -- maxwidth = 50,
-        -- before = function(entry, vim_item)
-          -- return vim_item
-        -- end
-    -- })
-	-- },
+	formatting = {
+		format = require('lspkind').cmp_format({
+        with_text = true,
+        maxwidth = 50,
+        before = function(entry, vim_item)
+          return vim_item
+        end
+    })
+	},
 })

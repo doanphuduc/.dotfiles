@@ -86,7 +86,7 @@ return require('packer').startup(function()
       require('doanphuduc.plugins.nvim-cmp')
     end
   })
-  -- use("onsails/lspkind-nvim")
+  use("onsails/lspkind-nvim")
   use("L3MON4D3/LuaSnip")
 
 end
