@@ -30,18 +30,6 @@ return require('packer').startup(function()
     end
   })
 
-  -- use({
-  --     "preservim/nerdtree",
-  --     config = function()
-  --       require('doanphuduc.plugins.nerdtree.lua')
-  --     end
-  -- })
-  -- use("tsony-tsonev/nerdtree-git-plugin")
-  -- use("tiagofumo/vim-nerdtree-syntax-highlight")
-
-  -- Beautiful filetype icons
-  -- use("ryanoasis/vim-devicons")
-
   -- Show git diff in sign column
   use({
     "airblade/vim-gitgutter",
@@ -88,6 +76,18 @@ return require('packer').startup(function()
 
   -- Multiselection --> anti-patern in vim, can be removed in the future
   use("terryma/vim-multiple-cursors")
+
+  -- LSP & Completion
+  use("neovim/nvim-lspconfig")
+  use("hrsh7th/nvim-cmp")
+  use({
+    "hrsh7th/cmp-nvim-lsp",
+    config = function()
+      require('doanphuduc.plugins.nvim-cmp')
+    end
+  })
+  -- use("onsails/lspkind-nvim")
+  use("L3MON4D3/LuaSnip")
 
 end
 )
