@@ -19,13 +19,13 @@ cmp.setup({
     { name = 'nvim_lsp', max_item_count = 10 },
     { name = 'luasnip', max_item_count = 10 },
   },
-	formatting = {
-		format = require('lspkind').cmp_format({
-        with_text = true,
-        maxwidth = 50,
-        before = function(entry, vim_item)
-          return vim_item
-        end
-    })
-	},
+	-- formatting = {
+	-- 	format = require('lspkind').cmp_format({
+        -- with_text = true,
+        -- maxwidth = 50,
+        -- before = function(entry, vim_item)
+          -- return vim_item
+        -- end
+    -- })
+	-- },
 })
