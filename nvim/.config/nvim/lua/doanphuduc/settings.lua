@@ -3,6 +3,9 @@ local o = vim.o
 local opt = vim.opt
 local cmd = vim.cmd
 
+-- Set colorscheme
+local ok, _ = pcall(cmd, 'colorscheme dracula')
+
 -- Leader mapping
 g.mapleader = " "
 
@@ -30,6 +33,7 @@ o.autowrite = true
 
 -- Limit 100 characters in line
 o.textwidth = 100
+vim.api.nvim_set_option_value("colorcolumn", "100", {})
 
 o.joinspaces = false
 
@@ -64,12 +68,6 @@ o.swapfile = false
 
 -- Remember 50 items in command line history
 o.history = 50
-
--- Fix bug: Undefined variables
-g.NERDTreeGitStatusWithFlags = true
-
--- Set colorscheme
-local ok, _ = pcall(cmd, 'colorscheme dracula')
 
 -- Allow misspelling
 cmd.cnoreabbrev({'Q', 'q'})

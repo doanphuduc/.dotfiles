@@ -62,6 +62,19 @@ return require('packer').startup(function()
     end
   })
 
+  -- use("nvim-lua/plenary.nvim")
+
+  -- -- Telescope for fuzzy finder
+  -- use({
+  --   "nvim-telescope/telescope.nvim",
+  --   requires = {
+  --     "nvim-lua/plenary.nvim"
+  --   },
+  --   config = function()
+  --     require('doanphuduc.plugins.telescope')
+  --   end
+  -- })
+
   -- Statusline
   use({
     "vim-airline/vim-airline",
@@ -93,6 +106,23 @@ return require('packer').startup(function()
   })
   -- use("onsails/lspkind-nvim")
   use("L3MON4D3/LuaSnip")
+
+  use("ojroques/nvim-lspfuzzy")
+  require('lspfuzzy').setup {
+    methods = 'all',         -- either 'all' or a list of LSP methods (see below)
+    jump_one = true,         -- jump immediately if there is only one location
+    save_last = false,       -- save last location results for the :LspFuzzyLast command
+    callback = nil,          -- callback called after jumping to a location
+    fzf_preview = {          -- arguments to the FZF '--preview-window' option
+      'right:+{2}-/2'          -- preview on the right and centered on entry
+    },
+    fzf_action = {               -- FZF actions
+      ['ctrl-v'] = 'vsplit',     -- go to location in a vertical split
+      ['ctrl-h'] = 'split',      -- go to location in a horizontal split
+    },
+    fzf_modifier = ':~:.',   -- format FZF entries, see |filename-modifiers|
+    fzf_trim = true,         -- trim FZF entries
+  }
 
 end
 )
