@@ -28,6 +28,16 @@ local cpp_config = function(_config)
   return base_config(_config)
 end
 
+local python_config = function(_config)
+  return base_config(_config)
+end
+
+local go_config = function(_config)
+  return base_config(_config)
+end
+
 M.cpp_config = cpp_config
+M.python_config = python_config
+M.go_config = go_config
 
 return M

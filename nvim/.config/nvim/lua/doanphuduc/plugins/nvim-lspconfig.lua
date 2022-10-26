@@ -1,8 +1,18 @@
--- CPP LSP
-local config = require('doanphuduc.plugins.nvim-lspconfig.config').cpp_config()
-local clangd = require('doanphuduc.plugins.nvim-lspconfig.clangd')
+local lsp = require('doanphuduc.plugins.nvim-lspconfig.lsp')
+-- CPP LSP (clangd)
+local cpp_config = require('doanphuduc.plugins.nvim-lspconfig.config').cpp_config()
+local clangd = lsp.clangd
 
-clangd.serve(config)
+clangd(cpp_config)
 
--- Python LSP
-vim.g.lsp_preview_autoclose = true
+-- Python LSP (pyright)
+local python_config = require('doanphuduc.plugins.nvim-lspconfig.config').python_config()
+local pyright = lsp.pyright
+
+pyright(python_config)
+
+-- Go LSP (gopls)
+local go_config = require('doanphuduc.plugins.nvim-lspconfig.config').go_config()
+local gopls = lsp.gopls
+
+gopls(go_config)
