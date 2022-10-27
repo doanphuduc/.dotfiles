@@ -3,7 +3,8 @@ local o = vim.o
 local opt = vim.opt
 local cmd = vim.cmd
 
--- Set colorscheme
+-- Set colorscheme (disable italic text, do not favour)
+g.dracula_italic = 0
 local ok, _ = pcall(cmd, 'colorscheme dracula')
 
 -- Leader mapping
