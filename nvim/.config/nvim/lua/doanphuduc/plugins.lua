@@ -91,9 +91,9 @@ return require('packer').startup(function()
       require('doanphuduc.plugins.nvim-cmp')
     end
   })
-  -- use("onsails/lspkind-nvim")
   use("L3MON4D3/LuaSnip")
 
+  -- Improve preview when search with fzf
   use({
     "ojroques/nvim-lspfuzzy",
     requires = {
@@ -104,6 +104,9 @@ return require('packer').startup(function()
       require('doanphuduc.plugins.nvim-lspfuzzy')
     end
   })
+
+  -- Go plugins
+  use('fatih/vim-go')
 
 end
 )
