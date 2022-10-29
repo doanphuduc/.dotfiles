@@ -1,5 +1,6 @@
 local nnoremap = require('doanphuduc.keymap').nnoremap
 local vnoremap = require('doanphuduc.keymap').vnoremap
+local xnoremap = require('doanphuduc.keymap').xnoremap
 local vmap = require('doanphuduc.keymap').vmap
 
 -- Fix n and N. Keep cursor in center
@@ -50,7 +51,7 @@ nnoremap('Q', ':BD<CR>')
 nnoremap('Y', 'y$')
 
 -- Delete and paste
-nnoremap('<Leader>p', '"_dP')
+xnoremap('<Leader>p', '"_dP')
 
 -- Remove highlight with two Escape
 nnoremap('<Esc><Esc>', ':<C-u>nohlsearch<CR>', { silent = false } )
