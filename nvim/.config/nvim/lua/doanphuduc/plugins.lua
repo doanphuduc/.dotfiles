@@ -62,19 +62,6 @@ return require('packer').startup(function()
     end
   })
 
-  -- use("nvim-lua/plenary.nvim")
-
-  -- -- Telescope for fuzzy finder
-  -- use({
-  --   "nvim-telescope/telescope.nvim",
-  --   requires = {
-  --     "nvim-lua/plenary.nvim"
-  --   },
-  --   config = function()
-  --     require('doanphuduc.plugins.telescope')
-  --   end
-  -- })
-
   -- Statusline
   use({
     "vim-airline/vim-airline",
