@@ -45,22 +45,39 @@ return require('packer').startup(function()
   use("tpope/vim-commentary")
 
   -- Syntax highlight
-  use("sheerun/vim-polyglot")
+  use('sheerun/vim-polyglot')
+  -- use("nvim-treesitter/playground")
+  -- use({
+  --   "nvim-treesitter/nvim-treesitter", 
+  --   config = function()
+  --     require('doanphuduc.plugins.nvim-treesitter')
+  --   end
+  -- })
 
-  -- Fuzzy finder
-  use({
-    "junegunn/fzf",
-    run = ":call fzf#install()"
-  })
-  use({
-    "junegunn/fzf.vim",
-    requires = {
-      "junegunn/fzf",
-    },
-    config = function()
-      require('doanphuduc.plugins.fzf')
-    end
-  })
+  -- use({
+  --   'nvim-treesitter/nvim-treesitter-context',
+  --   requires = {
+  --     'nvim-treesitter/nvim-treesitter', -- optional, for file icons
+  --   },
+  --   config = function()
+  --     require('doanphuduc.plugins.nvim-treesitter-context');
+  --   end
+  -- })
+
+  -- -- Fuzzy finder
+  -- use({
+  --   "junegunn/fzf",
+  --   run = ":call fzf#install()"
+  -- })
+  -- use({
+  --   "junegunn/fzf.vim",
+  --   requires = {
+  --     "junegunn/fzf",
+  --   },
+  --   config = function()
+  --     require('doanphuduc.plugins.fzf')
+  --   end
+  -- })
 
   -- Statusline
   use({
