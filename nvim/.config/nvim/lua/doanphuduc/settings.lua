@@ -71,5 +71,7 @@ o.swapfile = false
 o.history = 50
 
 -- Allow misspelling
-cmd.cnoreabbrev({'Q', 'q'})
-cmd.cnoreabbrev({'W', 'w'})
+local ok, _ = pcall(cmd, 'cnoreabbrev Q q')
+local ok, _ = pcall(cmd, 'cnoreabbrev W w')
+-- cmd.cnoreabbrev({'Q', 'q'})
+-- cmd.cnoreabbrev({'W', 'w'})
