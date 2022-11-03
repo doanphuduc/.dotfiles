@@ -20,6 +20,7 @@ require('nvim-tree').setup({
       window_picker = {
         enable = false,
       },
+      quit_on_open = true
     },
   },
   renderer = {
@@ -47,9 +48,6 @@ require('nvim-tree').setup({
     },
   },
 })
-
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
 
 nnoremap('<C-b>', ':NvimTreeToggle<CR>')
 nnoremap('<C-f>', ':NvimTreeFindFile<CR>')
