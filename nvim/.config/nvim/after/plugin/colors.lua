@@ -12,10 +12,10 @@
 --   hi! link @tag.delimiter Normal
 -- endif
 
-local ok, _ = pcall(vim.cmd, [[
-  hi! clear @punctuation.bracket
-  hi! clear @property
-  hi! clear @variable
-  hi! clear @text
-  hi! clear @tag.delimiter
-]])
+-- local ok, _ = pcall(vim.cmd, [[
+--   hi! clear @punctuation.bracket
+--   hi! clear @property
+--   hi! clear @variable
+--   hi! clear @text
+--   hi! clear @tag.delimiter
+-- ]])
