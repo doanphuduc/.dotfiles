@@ -45,24 +45,24 @@ return require('packer').startup(function()
   use("tpope/vim-commentary")
 
   -- Syntax highlight
-  -- use('sheerun/vim-polyglot')
-  use("nvim-treesitter/playground")
-  use({
-    "nvim-treesitter/nvim-treesitter", 
-    config = function()
-      require('doanphuduc.plugins.nvim-treesitter')
-    end
-  })
+  use('sheerun/vim-polyglot')
+  -- use("nvim-treesitter/playground")
+  -- use({
+  --   "nvim-treesitter/nvim-treesitter", 
+  --   config = function()
+  --     require('doanphuduc.plugins.nvim-treesitter')
+  --   end
+  -- })
 
-  use({
-    'nvim-treesitter/nvim-treesitter-context',
-    requires = {
-      'nvim-treesitter/nvim-treesitter', -- optional, for file icons
-    },
-    config = function()
-      require('doanphuduc.plugins.nvim-treesitter-context');
-    end
-  })
+  -- use({
+  --   'nvim-treesitter/nvim-treesitter-context',
+  --   requires = {
+  --     'nvim-treesitter/nvim-treesitter', -- optional, for file icons
+  --   },
+  --   config = function()
+  --     require('doanphuduc.plugins.nvim-treesitter-context');
+  --   end
+  -- })
 
   -- Fuzzy finder
   use({
