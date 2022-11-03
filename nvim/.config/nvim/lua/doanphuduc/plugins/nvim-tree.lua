@@ -1,6 +1,8 @@
 local g = vim.g
 local nnoremap = require('doanphuduc.keymap').nnoremap
 
+g.nvim_tree_refresh_wait = 500
+
 require('nvim-tree').setup({
   diagnostics = {
     enable = true,
