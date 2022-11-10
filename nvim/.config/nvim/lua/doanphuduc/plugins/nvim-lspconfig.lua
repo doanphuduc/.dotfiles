@@ -16,3 +16,7 @@ local go_config = require('doanphuduc.plugins.nvim-lspconfig.config').go_config(
 local gopls = lsp.gopls
 
 gopls(go_config)
+
+-- Disable lsp diagnotics
+vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
+
