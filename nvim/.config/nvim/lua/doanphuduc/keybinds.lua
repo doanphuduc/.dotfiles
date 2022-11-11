@@ -15,8 +15,8 @@ nnoremap('<Leader>o', 'o<ESC>')
 nnoremap('<Leader>O', 'O<ESC>')
 
 -- Move to the next/previous buffer, save if possible
-nnoremap('<Tab>', ':if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bn<CR>')
-nnoremap('<S-Tab>', ':if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>')
+nnoremap('<Tab>', ':bn<CR>')
+nnoremap('<S-Tab>', ':bp<CR>')
 
 -- Split behaviour
 nnoremap('<Leader>\\', ':vsplit<CR>')
@@ -60,3 +60,4 @@ nnoremap('<Esc><Esc>', ':<C-u>nohlsearch<CR>', { silent = false } )
 vmap('<Tab>', '>gv')
 vmap('<S-Tab>', '<gv')
 
+nnoremap('b', ":<C-u> lua require('doanphuduc.misc').JumpBuffer(vim.v.count)<CR>")
