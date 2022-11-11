@@ -79,17 +79,17 @@ return require('packer').startup(function()
     end
   })
 
-  -- Statusline
+  -- Statusline & bufferline
   use({
-    "vim-airline/vim-airline",
+    'nvim-lualine/lualine.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      opt = true
+    },
     config = function()
-      require("doanphuduc.plugins.vim-airline")
+      require('doanphuduc.plugins.lualine')
     end
   })
-  use("vim-airline/vim-airline-themes")
-
-  -- Tmux status line
-  use("edkolev/tmuxline.vim")
 
   -- Multiselection --> anti-patern in vim, can be removed in the future
   use("terryma/vim-multiple-cursors")
