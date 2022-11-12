@@ -60,4 +60,4 @@ nnoremap('<Esc><Esc>', ':<C-u>nohlsearch<CR>', { silent = false } )
 vmap('<Tab>', '>gv')
 vmap('<S-Tab>', '<gv')
 
-nnoremap('b', ":<C-u> lua require('doanphuduc.misc').JumpBuffer(vim.v.count)<CR>")
+nnoremap('\\', ":<C-u> lua require('doanphuduc.misc').JumpBuffer(vim.v.count)<CR>")

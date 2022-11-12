@@ -6,7 +6,15 @@ require('lualine').setup({
     always_divide_middle = false,
   },
   sections = {
-    lualine_a = {{'mode'}},
+    lualine_a = {
+      {
+        'mode',
+        fmt = function(str)
+          mode = string.format("%-7s", str)
+          return mode
+        end 
+      }
+    },
     lualine_b = {'branch'},
     lualine_c = {{'filename', path = 1}},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
