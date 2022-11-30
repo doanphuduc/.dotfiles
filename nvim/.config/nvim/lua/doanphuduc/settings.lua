@@ -75,3 +75,6 @@ local ok, _ = pcall(cmd, 'cnoreabbrev Q q')
 local ok, _ = pcall(cmd, 'cnoreabbrev W w')
 -- cmd.cnoreabbrev({'Q', 'q'})
 -- cmd.cnoreabbrev({'W', 'w'})
+
+-- Fix bugs: Polygot change the tabsize
+local ok, _ = pcall(cmd, "let g:polyglot_disabled = ['autoindent']")
