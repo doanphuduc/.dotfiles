@@ -4,6 +4,7 @@ local nnoremap = require('doanphuduc.keymap').nnoremap
 g.nvim_tree_refresh_wait = 500
 
 require('nvim-tree').setup({
+  open_on_setup = true,
   diagnostics = {
     enable = true,
   },
@@ -19,9 +20,7 @@ require('nvim-tree').setup({
   },
   actions = {
     open_file = {
-      window_picker = {
-        enable = false,
-      },
+      resize_window = true,
     },
   },
   renderer = {
