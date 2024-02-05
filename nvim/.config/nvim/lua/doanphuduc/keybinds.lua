@@ -62,7 +62,7 @@ vmap('<S-Tab>', '<gv')
 
 nnoremap('\\', ":<C-u> lua require('doanphuduc.misc').JumpBuffer(vim.v.count)<CR>")
 
-nnoremap('<C-w>', ':!rsync -av ../rdma-examples/ pduc@ny5-dtllab01.dtl:/home/pduc/workspace/rdma-examples<CR>', { silent = false })
+-- nnoremap('<C-w>', ':!rsync -av ../rdma-examples/ pduc@ny5-dtllab01.dtl:/home/pduc/workspace/rdma-examples<CR>', { silent = false })
 
-vim.cmd('command! S !rsync -av ../rdma-examples/ pduc@ny5-dtllab01.dtl:/home/pduc/workspace/rdma-examples')
+-- vim.cmd('command! S !rsync -av ../rdma-examples/ pduc@ny5-dtllab01.dtl:/home/pduc/workspace/rdma-examples')
 
