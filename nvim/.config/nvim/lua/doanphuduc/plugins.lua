@@ -38,6 +38,8 @@ return require('packer').startup(function()
     end
   })
 
+  -- Web developments
+
   -- Buffer killer
   use("qpkorr/vim-bufkill")
 
