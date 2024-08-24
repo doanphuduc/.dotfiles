@@ -1,6 +1,9 @@
 local lsp = require('doanphuduc.plugins.nvim-lspconfig.lsp')
 -- CPP LSP (clangd)
-local cpp_config = require('doanphuduc.plugins.nvim-lspconfig.config').cpp_config()
+_cpp_config = {
+  cmd = { 'clangd_wrapper_client' },
+}
+local cpp_config = require('doanphuduc.plugins.nvim-lspconfig.config').cpp_config(_cpp_config)
 local clangd = lsp.clangd
 
 clangd(cpp_config)
