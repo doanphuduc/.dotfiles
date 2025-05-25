@@ -4,8 +4,8 @@ local opt = vim.opt
 local cmd = vim.cmd
 
 -- Set colorscheme (disable italic text, do not favour)
-g.dracula_italic = 0
-local ok, _ = pcall(cmd, 'colorscheme dracula')
+-- g.dracula_italic = 0
+local ok, _ = pcall(cmd, 'colorscheme catppuccin')
 
 -- Leader mapping
 g.mapleader = " "
@@ -78,3 +78,6 @@ local ok, _ = pcall(cmd, 'cnoreabbrev W w')
 
 -- Fix bugs: Polygot change the tabsize
 local ok, _ = pcall(cmd, "let g:polyglot_disabled = ['autoindent']")
+local ok, _ = pcall(cmd, [[
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx"
+]])

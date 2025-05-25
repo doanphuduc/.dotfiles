@@ -9,7 +9,7 @@ A.nvim_create_autocmd('FileType', {
 })
 
 -- Custom filetype
-A.nvim_create_autocmd('BufRead,BufNewFile', {
+A.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
   pattern = '*.pconf',
   command = 'set filetype=pconf'
 })
@@ -24,3 +24,14 @@ A.nvim_create_autocmd('TextYankPost', {
     })
   end
 })
+
+-- A.nvim_create_autocmd('BufRead,BufNewFile', {
+--   pattern = '*.js',
+--   command = 'set filetype=javascript.jsx'
+-- })
+
+A.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+  pattern = '*.jsx',
+  command = 'set filetype=jsx'
+})
+

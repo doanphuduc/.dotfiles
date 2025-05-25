@@ -6,7 +6,10 @@ ZSH_THEME="dracula"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+# Disable zsh update
+
 source $ZSH/oh-my-zsh.sh
+export DISABLE_AUTO_UPDATE=true
 
 ##### VIM STUFF
 bindkey '\e' vi-cmd-mode
@@ -56,3 +59,21 @@ alias reload='source ~/.zshrc'
 
 KEYTIMEOUT=1
 source ~/.zshrc.local
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/pduc/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/pduc/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/pduc/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/pduc/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export OPENAI_API_KEY="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"
+

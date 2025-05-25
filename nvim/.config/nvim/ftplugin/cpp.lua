@@ -8,3 +8,6 @@ opt_local.cino:append({'g1', 'h1', 'j1', '(0', 'ws', 'Ws'})
 
 -- Comment chars
 opt_local.commentstring = "// %s"
+
+-- Disable lsp diagnotics
+vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end

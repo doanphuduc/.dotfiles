@@ -17,6 +17,9 @@ local gopls = lsp.gopls
 
 gopls(go_config)
 
--- Disable lsp diagnotics
-vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
+-- TS LSP (js)
+local tsserver_config = require('doanphuduc.plugins.nvim-lspconfig.config').tsserver_config()
+local tsserver = lsp.tsserver
+
+tsserver(tsserver_config)
 

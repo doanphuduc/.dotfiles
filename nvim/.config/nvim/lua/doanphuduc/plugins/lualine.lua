@@ -1,6 +1,7 @@
 require('lualine').setup({
   options = {
-    theme = 'dracula',
+    -- theme = 'dracula',
+    theme = "catppuccin",
     -- section_separators = '',
     -- component_separators = ''
     always_divide_middle = false,
@@ -30,7 +31,8 @@ require('lualine').setup({
           alternate_file = ""
         },
         mode = 2, -- Show buffer index (not buffer number) to ultilize jumping buffer
-        max_length = vim.o.columns - 10 -- 10 spaces for Buffers 
+        max_length = vim.o.columns - 10, -- 10 spaces for Buffers 
+
       },
     },
     -- lualine_b = {},

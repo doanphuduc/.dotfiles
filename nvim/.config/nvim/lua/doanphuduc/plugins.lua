@@ -11,13 +11,23 @@ return require('packer').startup(function()
   -- Package manager
   use("wbthomason/packer.nvim")
 
-  -- Colorschemes
-  use("dracula/vim")
+  -- -- Colorschemes
+  -- use({
+  --   "dracula/vim",
+  --   priority = 1000,
+  -- })
+  
+  use({
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = function()
+      require('doanphuduc.plugins.catppuccin')
+    end
+  })
 
   -- Fast delete, update in surround tag, bracket, parenthenses, ...
   use("tpope/vim-surround")
-
-  -- NERDTree plugins
+  use("tpope/vim-fugitive")
 
   use("nvim-tree/nvim-web-devicons")
   use({
@@ -45,14 +55,18 @@ return require('packer').startup(function()
   use("tpope/vim-commentary")
 
   -- Syntax highlight
-  use('sheerun/vim-polyglot')
-  -- use("nvim-treesitter/playground")
   -- use({
-  --   "nvim-treesitter/nvim-treesitter", 
-  --   config = function()
-  --     require('doanphuduc.plugins.nvim-treesitter')
-  --   end
+  --   'sheerun/vim-polyglot',
+  --   priority = 1000,
+  --   -- opt = false,
   -- })
+  use("nvim-treesitter/playground")
+  use({
+    "nvim-treesitter/nvim-treesitter", 
+    config = function()
+      require('doanphuduc.plugins.nvim-treesitter')
+    end
+  })
 
   -- use({
   --   'nvim-treesitter/nvim-treesitter-context',
@@ -124,6 +138,10 @@ return require('packer').startup(function()
 
   -- Go plugins
   use('fatih/vim-go')
+
+  -- Web dev plugins
+  -- use('windwp/nvim-autopairs')
+  -- use('windwp/nvim-ts-autotag')
 
 end
 )

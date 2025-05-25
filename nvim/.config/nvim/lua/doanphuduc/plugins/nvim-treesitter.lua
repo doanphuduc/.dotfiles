@@ -1,9 +1,27 @@
 require('nvim-treesitter.configs').setup({
-  ensure_installed = "all",
-  sync_install = false,
-
+  ensure_installed = {
+    "tsx",
+    "toml",
+    "fish",
+    "php",
+    "json",
+    "yaml",
+    "swift",
+    "css",
+    "html",
+    "lua",
+    "cpp",
+    "python",
+    "bash",
+    "go",
+  },
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = false,
+    disable = {},
   },
+  indent = {
+    enable = true,
+    disable = {},
+  },
+  auto_install = true,
 })
