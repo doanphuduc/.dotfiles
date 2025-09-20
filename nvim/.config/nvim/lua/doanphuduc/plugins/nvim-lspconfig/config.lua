@@ -36,13 +36,13 @@ local go_config = function(_config)
   return base_config(_config)
 end
 
-local tsserver_config = function(_config)
-  return base_config(_config)
-end
+-- local tsserver_config = function(_config)
+--   return base_config(_config)
+-- end
 
 M.cpp_config = cpp_config
 M.python_config = python_config
 M.go_config = go_config
-M.tsserver_config = tsserver_config
+-- M.tsserver_config = tsserver_config
 
 return M

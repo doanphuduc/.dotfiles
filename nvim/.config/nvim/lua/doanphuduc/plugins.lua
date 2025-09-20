@@ -30,6 +30,7 @@ return require('packer').startup(function()
   use("tpope/vim-fugitive")
 
   use("nvim-tree/nvim-web-devicons")
+
   use({
     'nvim-tree/nvim-tree.lua',
     requires = {
@@ -39,6 +40,15 @@ return require('packer').startup(function()
       require('doanphuduc.plugins.nvim-tree')
     end
   })
+
+  use({
+    'jedrzejboczar/devcontainers.nvim',
+    dependencies = {
+        'netman.nvim', -- optional to browse files in docker container
+    },
+    opts = {},
+  })
+
 
   -- Show git diff in sign column
   use({
@@ -122,6 +132,14 @@ return require('packer').startup(function()
       require('doanphuduc.plugins.nvim-cmp')
     end
   })
+
+    use({
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+        require("lsp_lines").setup()
+    end,
+    })
+
   use("L3MON4D3/LuaSnip")
 
   -- Improve preview when search with fzf
@@ -142,6 +160,25 @@ return require('packer').startup(function()
   -- Web dev plugins
   -- use('windwp/nvim-autopairs')
   -- use('windwp/nvim-ts-autotag')
+  use({
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+        require("nvim-autopairs").setup {}
+    end
+  })
+
+  use({
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.8',
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = function()
+      require('doanphuduc.plugins.nvim-telescope')
+    end
+  })
+
+
+
 
 end
 )

@@ -8,7 +8,7 @@ echo "~ Installing :: neovim"
 
 NEOVIM=$HOME/.local/
 
-wget -P $NEOVIM/ https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.tar.gz
+wget -P $NEOVIM/ https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux64.tar.gz
 tar -xzvf $NEOVIM/nvim-linux64.tar.gz -C $NEOVIM
 cp -r $NEOVIM/nvim-linux64/* $NEOVIM/.
 rm -rf $NEOVIM/nvim-linux64*

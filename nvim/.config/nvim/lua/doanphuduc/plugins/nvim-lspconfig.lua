@@ -1,6 +1,9 @@
 local lsp = require('doanphuduc.plugins.nvim-lspconfig.lsp')
 -- CPP LSP (clangd)
-local cpp_config = require('doanphuduc.plugins.nvim-lspconfig.config').cpp_config()
+_cpp_config = {
+  cmd = require('devcontainers').lsp_cmd({ 'clangd' })
+}
+local cpp_config = require('doanphuduc.plugins.nvim-lspconfig.config').cpp_config(_cpp_config)
 local clangd = lsp.clangd
 
 clangd(cpp_config)
@@ -17,9 +20,8 @@ local gopls = lsp.gopls
 
 gopls(go_config)
 
--- TS LSP (js)
-local tsserver_config = require('doanphuduc.plugins.nvim-lspconfig.config').tsserver_config()
-local tsserver = lsp.tsserver
+-- -- TS LSP (js)
+-- local tsserver_config = require('doanphuduc.plugins.nvim-lspconfig.config').tsserver_config()
+-- local tsserver = lsp.tsserver
 
-tsserver(tsserver_config)
-
+-- tsserver(tsserver_config)

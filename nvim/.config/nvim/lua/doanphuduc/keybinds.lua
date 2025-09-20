@@ -61,3 +61,9 @@ vmap('<Tab>', '>gv')
 vmap('<S-Tab>', '<gv')
 
 nnoremap('\\', ":<C-u> lua require('doanphuduc.misc').JumpBuffer(vim.v.count)<CR>")
+
+vim.keymap.set("n", "<Leader>p", function()
+  vim.lsp.buf.format({ async = true })
+end, { desc = "Format buffer" })
+
+vim.keymap.set("n", "<Leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })

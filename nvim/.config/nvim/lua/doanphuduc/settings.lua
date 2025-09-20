@@ -20,11 +20,13 @@ o.termguicolors = true
 o.ruler = true
 
 -- Indent
-o.tabstop = 2
-o.shiftwidth = 2
+o.tabstop = 4
+o.shiftwidth = 4
 o.shiftround = true
 o.expandtab = true
 o.smartindent = true
+-- o.autoindent = true
+-- o.cindent = true
 
 -- Wrap line when line too long
 o.wrap = true
@@ -33,8 +35,8 @@ o.wrap = true
 o.autowrite = true
 
 -- Limit 100 characters in line
-o.textwidth = 100
-vim.api.nvim_set_option_value("colorcolumn", "100", {})
+o.textwidth = 80
+vim.api.nvim_set_option_value("colorcolumn", "80", {})
 
 o.joinspaces = false
 
@@ -81,3 +83,13 @@ local ok, _ = pcall(cmd, "let g:polyglot_disabled = ['autoindent']")
 local ok, _ = pcall(cmd, [[
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx"
 ]])
+
+local notify = vim.notify
+vim.notify = function(msg, level, opts)
+  -- filter out lspconfig deprecation warnings
+  if type(msg) == "string" and msg:match("require%(\'lspconfig\'%)") then
+    return
+  end
+  notify(msg, level, opts)
+end
+
