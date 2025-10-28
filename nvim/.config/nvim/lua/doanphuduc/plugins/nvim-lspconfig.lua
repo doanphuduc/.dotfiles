@@ -1,7 +1,7 @@
 local lsp = require('doanphuduc.plugins.nvim-lspconfig.lsp')
 -- CPP LSP (clangd)
 _cpp_config = {
-  cmd = require('devcontainers').lsp_cmd({ 'clangd' })
+  cmd = require('devcontainers').lsp_cmd({ 'clangd', '--compile-commands-dir=build', "--log=verbose" })
 }
 local cpp_config = require('doanphuduc.plugins.nvim-lspconfig.config').cpp_config(_cpp_config)
 local clangd = lsp.clangd

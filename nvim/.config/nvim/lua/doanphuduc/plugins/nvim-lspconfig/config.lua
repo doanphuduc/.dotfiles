@@ -15,6 +15,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gr', ':lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', '<Leader>rn', ':lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<Leader>ws', ':lua vim.lsp.buf.workspace_symbol()<CR>', opts)
+  buf_set_keymap('n', '<Leader>ci', ':lua vim.lsp.buf.incoming_calls()<CR>', opts)
+  buf_set_keymap('n', '<Leader>co', ':lua vim.lsp.buf.outgoing_calls()<CR>', opts)
 end
 
 local base_config = function(_config)

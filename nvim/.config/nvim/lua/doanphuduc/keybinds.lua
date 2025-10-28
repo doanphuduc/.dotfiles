@@ -67,3 +67,11 @@ vim.keymap.set("n", "<Leader>p", function()
 end, { desc = "Format buffer" })
 
 vim.keymap.set("n", "<Leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.c", "*.cpp", "*.h", "*.hpp" },
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
+})
+
