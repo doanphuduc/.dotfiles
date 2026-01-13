@@ -3,9 +3,9 @@ local vnoremap = require('doanphuduc.keymap').vnoremap
 local xnoremap = require('doanphuduc.keymap').xnoremap
 local vmap = require('doanphuduc.keymap').vmap
 
--- Fix n and N. Keep cursor in center
-nnoremap('n', 'nzz')
-nnoremap('N', 'Nzz')
+-- -- Fix n and N. Keep cursor in center
+-- nnoremap('n', 'nzz')
+-- nnoremap('N', 'Nzz')
 
 -- Keep center when join lines
 nnoremap('J', 'mzJ`z')
@@ -74,4 +74,25 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format({ async = false })
   end,
 })
+
+local copilot_on = true
+vim.api.nvim_create_user_command("CopilotToggle", function()
+	if copilot_on then
+		vim.cmd("Copilot disable")
+	else
+		vim.cmd("Copilot enable")
+	end
+	copilot_on = not copilot_on
+end, { nargs = 0 })
+
+vim.keymap.set('n', '<Leader>cq', ":Copilot disable<CR>", { desc = 'Copilot Disable' })
+vim.keymap.set('n', '<Leader>cs', ":Copilot enable<CR>", { desc = 'Copilot Enable' })
+vim.keymap.set('n', '<Leader>cc', ":CopilotChat<CR>", { desc = 'Copilot Chat' })
+vim.keymap.set('v', '<Leader>cc', ":CopilotChat<CR>", { desc = 'Copilot Chat' })
+vim.keymap.set('v', '<Leader>ce', ":CopilotChatExplain<CR>", { desc = 'Copilot Chat Explain' })
+vim.keymap.set('v', '<Leader>cf', ":CopilotChatFix<CR>", { desc = 'Copilot Chat Fix' })
+vim.keymap.set('v', '<Leader>cr', ":CopilotChatReview<CR>", { desc = 'Copilot Chat Review' })
+vim.keymap.set('v', '<Leader>co', ":CopilotChatOptimize<CR>", { desc = 'Copilot Chat Optimize' })
+vim.keymap.set('v', '<Leader>ct', ":CopilotChatTests<CR>", { desc = 'Copilot Chat Tests' })
+vim.keymap.set('v', '<Leader>cm', ":CopilotChatCommit<CR>", { desc = 'Copilot Chat Commit' })
 

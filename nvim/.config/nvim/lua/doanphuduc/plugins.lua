@@ -51,12 +51,12 @@ return require('packer').startup(function()
 
 
   -- Show git diff in sign column
-  use({
-    "airblade/vim-gitgutter",
-    config = function()
-      require('doanphuduc.plugins.vim-gitgutter')
-    end
-  })
+  -- use({
+  --   "airblade/vim-gitgutter",
+  --   config = function()
+  --     require('doanphuduc.plugins.vim-gitgutter')
+  --   end
+  -- })
 
   -- Buffer killer
   use("qpkorr/vim-bufkill")
@@ -154,6 +154,13 @@ return require('packer').startup(function()
     end
   })
 
+  use({
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require('doanphuduc.plugins.gitsigns')
+    end
+  })
+
   -- Go plugins
   use('fatih/vim-go')
 
@@ -176,6 +183,20 @@ return require('packer').startup(function()
       require('doanphuduc.plugins.nvim-telescope')
     end
   })
+
+  use({
+    'CopilotC-Nvim/CopilotChat.nvim',
+    requires = {
+      {'github/copilot.vim'}, -- Ensures the official plugin is loaded
+      {'nvim-lua/plenary.nvim'},
+    },
+    run = 'make tiktoken', -- Necessary for the chat functionality
+    config = function()
+      require('doanphuduc.plugins.copilot')
+    end
+  })
+
+    use("folke/which-key.nvim")
 
 
 

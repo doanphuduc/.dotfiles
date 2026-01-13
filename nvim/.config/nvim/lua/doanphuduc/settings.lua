@@ -84,12 +84,21 @@ local ok, _ = pcall(cmd, [[
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx"
 ]])
 
-local notify = vim.notify
-vim.notify = function(msg, level, opts)
-  -- filter out lspconfig deprecation warnings
-  if type(msg) == "string" and msg:match("require%(\'lspconfig\'%)") then
-    return
-  end
-  notify(msg, level, opts)
-end
+-- local notify = vim.notify
+-- vim.notify = function(msg, level, opts)
+--   -- filter out lspconfig deprecation warnings
+--   if type(msg) == "string" and msg:match("require%(\'lspconfig\'%)") then
+--     return
+--   end
+--   notify(msg, level, opts)
+-- end
 
+-- vim.opt.list = true
+-- vim.opt.listchars = {
+--   tab = "> ",
+--   trail = "-",
+--   eol = "↲",
+--   nbsp = "_",
+--   extends = ">",
+--   precedes = "<",
+-- }
